@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Checking User HWID." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "If you're not whitelisted, script won't load." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Are you sigma?" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Are you somga?" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 
 local HWIDList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/HWID_WhiteList/main/main.lua'))()
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -30,6 +30,19 @@ local Window = OrionLib:MakeWindow({IntroText = "slap farm gui! v4", IntroIcon =
 
 OrionLib:MakeNotification({Name = "Warning",Content = "Use at your own risk.",Image = "rbxassetid://7733658504",Time = 5})
 
+local resetCharFunc = function()
+		local player = PlayersService.LocalPlayer
+		if player then
+			local character = player.Character
+			if character then
+				local humanoid = character:FindFirstChild('Humanoid')
+				if humanoid then
+					humanoid.Health = 0
+				end
+			end
+		end
+	end
+		
 function SpamReplica()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
 while ReplicaFarm do
@@ -51,12 +64,7 @@ until game.Players.LocalPlayer.Character:FindFirstChild("entered")
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
 wait(20)
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"Esc",false,x)
-task.wait(0.15)
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"R",false,x)
-task.wait(0.15)
-game:GetService("VirtualInputManager"):SendKeyEvent(true,"Enter",false,x)
-task.wait(0.15)
+resetCharFunc()
 wait(4)
 fireclickdetector(workspace.Lobby["Replica"].ClickDetector)
 wait(0.2)
@@ -124,11 +132,7 @@ Slap:AddToggle({
 slap = Value
 if slap == true then
 repeat task.wait()
-for i, v in pairs(workspace:GetChildren()) do
-                if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
-BoxingEvent:FireServer("HumanoidRootPart",true)
-                end
-            end
+game.ReplicatedStorage.Events.Boxing:FireServer("HumanoidRootPart",true)
 task.wait(0)
 until slap == false
 end
