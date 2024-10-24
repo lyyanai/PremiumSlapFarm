@@ -36,10 +36,10 @@ while ReplicaFarm do
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
 wait(1)
-fireclickdetector(workspace.Lobby["Replica"].ClickDetector)
+fireclickdetector(workspace.Lobby["Baller"].ClickDetector)
 wait(0.3)
-game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
-wait(1)
+game:GetService("ReplicatedStorage").GeneralAbility:FireServer()
+wait(4)
 fireclickdetector(workspace.Lobby["Boxer"].ClickDetector)
 wait(0.2)
 repeat task.wait() until game.Players.LocalPlayer.Character
