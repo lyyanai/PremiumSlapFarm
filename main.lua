@@ -51,7 +51,7 @@ until game.Players.LocalPlayer.Character:FindFirstChild("entered")
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
 wait(20)
-game.ReplicatedStorage.HumanoidDied:FireServer(game.Players.LocalPlayer.Character,false)
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
 wait(4)
 fireclickdetector(workspace.Lobby["Replica"].ClickDetector)
 wait(0.2)
