@@ -8,7 +8,5 @@ for i,v in pairs(HWIDList) do
   
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
 
-  else
-    game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're not whitelisted!" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
   end
 end
