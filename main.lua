@@ -111,7 +111,7 @@ Slap:AddToggle({
 	Default = false,
 	Callback = function(Value)
 ReplicaFarm = Value
-if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" and game.Players.LocalPlayer.Character.IsInDefaultArena.Value == true then
+if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
 if ReplicaFarm == true then
 coroutine.wrap(SpamReplica)()
 end
