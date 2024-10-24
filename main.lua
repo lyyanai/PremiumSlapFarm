@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Checking User HWID." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "If you're not whitelisted, script won't load." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're sus" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're amogus" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 
 local HWIDList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/HWID_WhiteList/main/main.lua'))()
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -51,7 +51,12 @@ until game.Players.LocalPlayer.Character:FindFirstChild("entered")
 end
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
 wait(20)
-game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"Esc",false,x)
+task.wait(0.15)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"R",false,x)
+task.wait(0.15)
+game:GetService("VirtualInputManager"):SendKeyEvent(true,"Enter",false,x)
+task.wait(0.15)
 wait(4)
 fireclickdetector(workspace.Lobby["Replica"].ClickDetector)
 wait(0.2)
@@ -76,33 +81,19 @@ Slap:AddButton({
 	 end
 })
 
-Slap:AddButton({
-	Name = "Equip Baller",
-	Callback = function()
-			 fireclickdetector(workspace.Lobby["Baller"].ClickDetector)
-	 end
-})
-
-Slap:AddButton({
-	Name = "Equip Blink",
-	Callback = function()
-			 fireclickdetector(workspace.Lobby["Blink"].ClickDetector)
-	 end
-})
-
 Slap:AddToggle({
-	Name = "Auto Boxer Slap Blink & Replica & Baller { TURN ME ON }",
+	Name = "Auto Slap Blink & Replica & Baller { TURN ME ON }",
 	Default = false,
 	Callback = function(Value)
 slap = Value
 if slap == true then
 repeat task.wait()
-local args = {
-                [1] = "HumanoidRootPart",
-                [2] = true
-            }
-            BoxingEvent:FireServer(unpack(args))
-task.wait(0)
+for i, v in pairs(workspace:GetChildren()) do
+                if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
+BoxingEvent:FireServer(v:WaitForChild("HumanoidRootPart"),true)
+                end
+            end
+task.wait()
 until slap == false
 end
 	 end
