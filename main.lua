@@ -1,5 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Checking User HWID." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "If you're not whitelisted, script won't load." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're seems too sussy" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 
 local HWIDList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/HWID_WhiteList/main/main.lua'))()
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -25,21 +26,24 @@ local _servers = Api .. _place .. "/servers/Public?sortOrder=Desc&limit=100"
 local GameName = "slap farm gui - by nexer"
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({IntroText = "slap farm gui! v3.2", IntroIcon = "rbxassetid://15315284749",Name = GameName, HidePremium = false, SaveConfig = true, ConfigFolder = "Tutorial"})
+local Window = OrionLib:MakeWindow({IntroText = "slap farm gui! v3.7", IntroIcon = "rbxassetid://15315284749",Name = GameName, HidePremium = false, SaveConfig = true, ConfigFolder = "Tutorial"})
 
 OrionLib:MakeNotification({Name = "Warning",Content = "Use at your own risk.",Image = "rbxassetid://7733658504",Time = 5})
 
 function SpamReplica()
 if game.Players.LocalPlayer.leaderstats.Glove.Value == "Replica" then
 while ReplicaFarm do
+wait(1)
 fireclickdetector(workspace.Lobby["Ghost"].ClickDetector)
 wait(0.3)
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
-wait(0.3)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
-wait(0.5)
-game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
 wait(0.2)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(17893.529296875, -23.757728576660156, -3515.2001953125)
+wait(1)
+fireclickdetector(workspace.Lobby["Replica"].ClickDetector)
+wait(0.3)
+game:GetService("ReplicatedStorage").Duplicate:FireServer(true)
+wait(1)
 fireclickdetector(workspace.Lobby["Boxer"].ClickDetector)
 wait(0.2)
 repeat task.wait() until game.Players.LocalPlayer.Character
