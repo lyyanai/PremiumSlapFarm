@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Checking User HWID." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "If you're not whitelisted, script won't load." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Are you skidder?" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Are you sigma?" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 
 local HWIDList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/HWID_WhiteList/main/main.lua'))()
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -82,7 +82,7 @@ Slap:AddButton({
 })
 
 Slap:AddToggle({
-	Name = "Auto Slap Blink & Replica & Baller { TURN ME ON } 1",
+	Name = "Auto Slap Blink & Replica & Baller { TURN ME ON } 0.5",
 	Default = false,
 	Callback = function(Value)
 slap = Value
@@ -91,6 +91,24 @@ repeat task.wait()
 for i, v in pairs(workspace:GetChildren()) do
                 if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
 BoxingEvent:FireServer(v:WaitForChild("HumanoidRootPart"),true)
+                end
+            end
+task.wait(0)
+until slap == false
+end
+	 end
+})
+		
+Slap:AddToggle({
+	Name = "Auto Slap Blink & Replica & Baller { TURN ME ON } 1",
+	Default = false,
+	Callback = function(Value)
+slap = Value
+if slap == true then
+repeat task.wait()
+for i, v in pairs(workspace:GetChildren()) do
+                if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
+game.ReplicatedStorage.Events.Boxing:FireServer(v:WaitForChild("HumanoidRootPart"),true)
                 end
             end
 task.wait(0)
