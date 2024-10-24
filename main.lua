@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Checking User HWID." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "If you're not whitelisted, script won't load." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're skibidi" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "You're sus" ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "ok"})
 
 local HWIDList = loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/HWID_WhiteList/main/main.lua'))()
 local HWID = game:GetService("RbxAnalyticsService"):GetClientId()
@@ -97,15 +97,11 @@ Slap:AddToggle({
 slap = Value
 if slap == true then
 repeat task.wait()
-for i, v in pairs(workspace:GetChildren()) do
-                if v.Name:match(game.Players.LocalPlayer.Name) and v:FindFirstChild("HumanoidRootPart") then
 local args = {
-                [1] = v:WaitForChild("HumanoidRootPart"),
+                [1] = "HumanoidRootPart",
                 [2] = true
             }
             BoxingEvent:FireServer(unpack(args))
-		end
-end
 task.wait(0)
 until slap == false
 end
