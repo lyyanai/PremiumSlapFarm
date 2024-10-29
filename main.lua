@@ -9,7 +9,7 @@ for i,v in pairs(HWIDList) do
     game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Whitelisted!",Text = "Successfully Whitelisted! Hold on, script is loading." ,Duration = 10, Icon = "rbxthumb://type=Asset&id=9649923610&w=150&h=150",Button1 = "OK"})
 
 
-game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Credits",Text = "By Nexer1234 >:0",Icon = "rbxassetid://7733658504",Duration = 5})
+game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Credits",Text = "By Nexer1234 :>",Icon = "rbxassetid://7733658504",Duration = 5})
 game:GetService("StarterGui"):SetCore("SendNotification",{Title = "Error",Text = "Cause Big Lags",Icon = "rbxassetid://7733658504",Duration = 5})
 
 		
