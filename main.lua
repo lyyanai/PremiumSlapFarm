@@ -3,3 +3,4 @@
 --this is useless man
 --do you think you're the smartest huh?
 --i am skibidi sigma rizzler + 600000 aura
+-- yo bro dm me rn i have something to say my username is nexer1234
