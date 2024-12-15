@@ -6,7 +6,7 @@ if Teleport then
     Teleport([[
         if not game:IsLoaded() then
             game.Loaded:Wait()
-                      end
+        end
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro666Pro/PremiumSlapFarm/main/main.lua'))()
 	]])
 end	
